@@ -33,3 +33,32 @@ CREATE TABLE accounts (
     created_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP,
     updated_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP
 );
+
+**## API Requests Endpoints:**
+
+**Header** Content-Type: application/json
+**Create Account:**
+POST http://localhost:8080/accounts
+{
+  "name": "Alice",
+  "initial_balance": 1000
+}
+
+
+**Deposit Funds:**
+POST http://localhost:8080/transactions/deposit
+{
+  "account_id": 1,
+  "amount": 500
+}
+
+**Withdraw Funds:**
+POST http://localhost:8080/transactions/withdraw
+{
+  "account_id": 1,
+  "amount": 200
+}
+
+**Ledger(Transaction History):**
+GET http://localhost:8080/accounts/1/ledger
+
